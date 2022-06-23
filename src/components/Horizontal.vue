@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="Hoz">
     <div class="flex justify-center">
       <div class="w-11/12 mt-2">
         <div class="border-1 border-gray-300 p-3 bg-gray-200 my-2">
@@ -53,9 +53,32 @@
         </svg>
       </div>
     </div>
+    <table>
+      <thead>
+        <th>AAAAAAAAAAAAAA</th>
+        <th>BBBBBBBBBBBBbB</th>
+        <th>cCCCCCCCCCCCCC</th>
+        <th>AAAAAAAAAAAAAA</th>
+        <th>BBBBBBBBBBBBbB</th>
+        <th>cCCCCCCCCCCCCC</th>
+        <th>AAAAAAAAAAAAAA</th>
+        <th>BBBBBBBBBBBBbB</th>
+        <th>cCCCCCCCCCCCCC</th>
+        <th>AAAAAAAAAAAAAA</th>
+        <th>BBBBBBBBBBBBbB</th>
+        <th>cCCCCCCCCCCCCC</th>
+        <th>AAAAAAAAAAAAAA</th>
+        <th>BBBBBBBBBBBBbB</th>
+        <th>cCCCCCCCCCCCCC</th>
+      </thead>
+    </table>
   </div>
 </template>
 <script>
 export default {};
 </script>
-<style></style>
+<style>
+.Hoz {
+  overflow-x: hidden;
+}
+</style>
