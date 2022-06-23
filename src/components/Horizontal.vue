@@ -53,25 +53,6 @@
         </svg>
       </div>
     </div>
-    <table>
-      <thead>
-        <th>AAAAAAAAAAAAAA</th>
-        <th>BBBBBBBBBBBBbB</th>
-        <th>cCCCCCCCCCCCCC</th>
-        <th>AAAAAAAAAAAAAA</th>
-        <th>BBBBBBBBBBBBbB</th>
-        <th>cCCCCCCCCCCCCC</th>
-        <th>AAAAAAAAAAAAAA</th>
-        <th>BBBBBBBBBBBBbB</th>
-        <th>cCCCCCCCCCCCCC</th>
-        <th>AAAAAAAAAAAAAA</th>
-        <th>BBBBBBBBBBBBbB</th>
-        <th>cCCCCCCCCCCCCC</th>
-        <th>AAAAAAAAAAAAAA</th>
-        <th>BBBBBBBBBBBBbB</th>
-        <th>cCCCCCCCCCCCCC</th>
-      </thead>
-    </table>
   </div>
 </template>
 <script>
