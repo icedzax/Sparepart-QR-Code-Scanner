@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="flex justify-center">
-      <div class="w-11/12 mt-2">
+      <div class="container mt-2">
         <div class="border-1 border-gray-300 p-3 bg-gray-200 my-2">
           <span class="flex justify-center"> MATNR</span>
         </div>
@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="flex justify-center">
-      <div class="w-11/12 mb-2">
+      <div class="container mb-2">
         <svg
           class="w-12"
           viewBox="0 0 20 20"
