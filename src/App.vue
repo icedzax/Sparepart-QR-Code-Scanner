@@ -25,3 +25,11 @@ setInterval(() => {
     </main>
   </div>
 </template>
+<style>
+.card {
+  @apply block rounded-lg border border-gray-200 bg-white  shadow-md;
+}
+#app {
+  overflow-x: hidden;
+}
+</style>

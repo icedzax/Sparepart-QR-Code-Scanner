@@ -1,20 +1,26 @@
 <template>
   <div class="Hoz">
     <div class="flex justify-center">
-      <div class="w-11/12 mt-2">
-        <div class="border-1 border-gray-300 p-3 bg-gray-200 my-2">
+      <div class="mt-2 w-11/12">
+        <div
+          class="my-2 block rounded-lg border border-gray-200 bg-white p-3 shadow-md"
+        >
           <span class="flex justify-center"> MATNR</span>
         </div>
         <div class="my-2 flex justify-center">
-          <img src="../../public/img/Faith.JFIF" alt="" class="w-auto" />
+          <img
+            :src="'https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png'"
+            alt=""
+            class="w-auto"
+          />
         </div>
-        <div class="border-1 border-gray-300 p-3 bg-gray-200 my-2 h-32">
+        <div class="border-1 my-2 h-32 border-gray-300 bg-gray-200 p-3">
           <span class="flex justify-center"> Detail...</span>
         </div>
       </div>
     </div>
     <div class="flex justify-center">
-      <div class="w-11/12 mb-2">
+      <div class="mb-2 w-11/12">
         <svg
           class="w-12"
           viewBox="0 0 20 20"
