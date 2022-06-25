@@ -71,7 +71,7 @@
               <img
                 :src="`http://picsap.zubbsteel.com/material/${mat}/${mat}.JPG`"
                 alt=""
-                class="w-auto rounded-lg shadow"
+                class="w-auto rounded-lg"
               />
             </div>
             <Skeletor
