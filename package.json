@@ -9,6 +9,7 @@
   "dependencies": {
     "axios": "^0.27.2",
     "vue": "^3.2.37",
+    "vue-qrcode": "^1.0.1",
     "vue-router": "^4.0.16",
     "vue-skeletor": "^1.0.6",
     "vue3-qr-reader": "^1.0.0"

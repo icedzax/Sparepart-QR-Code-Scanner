@@ -20,13 +20,20 @@ const useFindMat = (init) => {
   return { getMat, fetchMat };
 };
 
-function useCounterRt(initial) {
+function useQrMat(init) {
   // reactive composition api
-  const counterRt = reactive({ counter: initial });
-  function onClickRt() {
-    counterRt.counter++;
-  }
+  const QrMat = reactive({ data: init });
+  const fetchQr = async () => {
+    try {
+      const response = await axios.post(
+        "https://hook.zubbsteel.com/line-ci/qt/v1/qr"
+      );
+      QrMat.data = response.data;
+    } catch (error) {
+      QrMat.data = error;
+    }
+  };
 
-  return { counterRt, onClickRt };
+  return { QrMat, fetchQr };
 }
-export default { useFindMat, useCounterRt };
+export default { useFindMat, useQrMat };
