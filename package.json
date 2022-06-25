@@ -7,8 +7,11 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "vue": "^3.2.37",
-    "vue-router": "^4.0.16"
+    "vue-router": "^4.0.16",
+    "vue-skeletor": "^1.0.6",
+    "vue3-qr-reader": "^1.0.0"
   },
   "devDependencies": {
     "@headlessui/vue": "^1.6.4",
