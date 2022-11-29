@@ -80,12 +80,12 @@
               height="100"
             />
             <Matdata v-else class="my-3" />
-            <Skeletor
+            <!-- <Skeletor
               v-if="state.loading"
               class="mb-2 rounded-lg"
               height="100"
             />
-            <Mrp v-else class="my-3" />
+            <Mrp v-else class="my-3" /> -->
           </div>
         </div>
         <div

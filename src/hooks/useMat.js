@@ -8,7 +8,7 @@ const useFindMat = (init) => {
     try {
       const response = await axios.post(
         "https://hook.zubbsteel.com/line-ci/qt/v1/store",
-        { matnr: qr }
+        { matnr: "VRCI00223" }
       );
       getMat.data = response.data;
       state.data = getMat.data;
