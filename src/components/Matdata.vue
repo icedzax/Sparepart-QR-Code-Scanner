@@ -4,11 +4,15 @@
       <span>{{ MAKTX }}</span>
     </div>
     <div class="flex justify-start bg-emerald-100 px-1">
-      <select name="" id="" class="my-2" v-model="selectFilter">
-        <option v-for="(item, ind) in state.data" :key="ind">
-          {{ item.WERKS }}
-        </option>
-      </select>
+      <button
+        v-for="(item, ind) in Allplant"
+        :key="ind"
+        class="my-1 mx-4 rounded-lg border border-gray-400 bg-emerald-400 px-2 py-1"
+        @click="hideData(item)"
+        :id="item"
+      >
+        {{ item }}
+      </button>
     </div>
     <div class="flex justify-around bg-emerald-100 px-1 font-bold">
       <span class="w-full text-left">BATCH</span>
@@ -20,30 +24,15 @@
       :key="index"
       class="flex justify-around px-1"
     >
-      <span
-        class="w-full text-left"
-        v-show="
-          (selectFilter == item.WERKS || selectFilter == 'ALL') &&
-          item.WERKS !== 'ALL'
-        "
-        >{{ item.CHARG }}</span
-      >
-      <span
-        class="w-full text-center"
-        v-show="
-          (selectFilter == item.WERKS || selectFilter == 'ALL') &&
-          item.WERKS !== 'ALL'
-        "
-        >{{ item.WERKS }}</span
-      >
-      <span
-        class="w-full text-right"
-        v-show="
-          (selectFilter == item.WERKS || selectFilter == 'ALL') &&
-          item.WERKS !== 'ALL'
-        "
-        >{{ item.STOCK }}</span
-      >
+      <span class="w-full text-left" v-show="newplant.includes(item.WERKS)">{{
+        item.CHARG
+      }}</span>
+      <span class="w-full text-center" v-show="newplant.includes(item.WERKS)">{{
+        item.WERKS
+      }}</span>
+      <span class="w-full text-right" v-show="newplant.includes(item.WERKS)">{{
+        item.STOCK
+      }}</span>
     </div>
 
     <div class="flex justify-around px-1 font-bold">
@@ -57,16 +46,58 @@
 <script setup>
 import { computed, ref } from "vue";
 import { state } from "../state";
-
-state.data.push({ WERKS: "ALL" });
-const selectFilter = ref("ALL");
+const selectPlant = ref();
 const MAKTX = computed(() => {
   return state.data.length > 0 ? state.data[0].MAKTX : "";
 });
 
-const sum = state.data.reduce((acc, curr) => {
-  return parseInt(acc) + parseInt(curr.STOCK);
-}, 0);
+// const sum = state.data.reduce((acc, curr) => {
+//   return parseInt(acc) + parseInt(curr.STOCK);
+// }, 0);
+
+const sum = ref(0);
+
+const newplant = ref([]);
+const Allplant = Array();
+function getPlantButton() {
+  state.data.filter((x) => {
+    if (!Allplant.includes(x.WERKS)) {
+      Allplant.push(x.WERKS);
+    }
+
+    if (!newplant.value.includes(x.WERKS)) {
+      newplant.value.push(x.WERKS);
+    }
+
+    sum.value += parseInt(x.STOCK);
+  });
+}
+getPlantButton();
+
+const hideData = (i) => {
+  var element = document.getElementById(i);
+  if (newplant.value.includes(i)) {
+    const searchPlant = newplant.value.findIndex((item) => {
+      return item == i;
+    });
+    newplant.value.splice(searchPlant, 1);
+    element.classList.remove("bg-emerald-400");
+    element.classList.add("bg-gray-200");
+  } else {
+    newplant.value.push(i);
+    element.classList.add("bg-emerald-400");
+    element.classList.remove("bg-gray-200");
+  }
+  sum.value = 0;
+  state.data.map((data) => {
+    newplant.value.map((ind) => {
+      if (ind == data.WERKS) {
+        console.log("stock::", ind, "-", data.STOCK);
+        sum.value += parseInt(data.STOCK);
+      }
+    });
+  });
+};
 </script>
 
 <style></style>
