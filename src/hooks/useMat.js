@@ -6,10 +6,9 @@ const useFindMat = (init) => {
   const fetchMat = async (qr) => {
     state.loading = true;
     try {
-      const response = await axios.post(
-        "https://hook.zubbsteel.com/line-ci/qt/v1/store",
-        { matnr: qr }
-      );
+      const response = await axios.post("https://your-api/store", {
+        matnr: "GAMC00224",
+      });
       getMat.data = response.data;
       state.data = getMat.data;
     } catch (error) {
@@ -25,9 +24,7 @@ function useQrMat(init) {
   const QrMat = reactive({ data: init });
   const fetchQr = async () => {
     try {
-      const response = await axios.post(
-        "https://hook.zubbsteel.com/line-ci/qt/v1/qr"
-      );
+      const response = await axios.post("https://your-api/qr");
       QrMat.data = response.data;
     } catch (error) {
       QrMat.data = error;

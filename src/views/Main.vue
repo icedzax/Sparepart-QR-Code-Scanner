@@ -67,9 +67,9 @@
               circle
               size="150"
             />
-            <div v-else class="my-2 mx-auto flex h-3/6 w-3/6">
+            <div v-else class="my-2 mx-auto flex h-4/6 w-4/6">
               <img
-                :src="`http://picsap.zubbsteel.com/material/${mat}/${mat}.JPG`"
+                :src="`http://picsap.zubbsteel.com/material/getPic.php?mat=${mat}`"
                 alt=""
                 class="w-auto rounded-lg"
               />
@@ -117,24 +117,24 @@
   </div>
 </template>
 <script setup>
-import { onMounted, ref, computed } from "vue";
-import { Skeletor } from "vue-skeletor";
-import "vue-skeletor/dist/vue-skeletor.css";
-import Matdata from "@/components/Matdata.vue";
-import Mrp from "../components/Mrp.vue";
-import { state } from "../state";
-import Camera from "../components/Camera.vue";
-import useMat from "../hooks/useMat";
+  import { onMounted, ref, computed } from "vue";
+  import { Skeletor } from "vue-skeletor";
+  import "vue-skeletor/dist/vue-skeletor.css";
+  import Matdata from "@/components/Matdata.vue";
+  import Mrp from "../components/Mrp.vue";
+  import { state } from "../state";
+  import Camera from "../components/Camera.vue";
+  import useMat from "../hooks/useMat";
 
-const { fetchMat } = useMat.useFindMat([]);
+  const { fetchMat } = useMat.useFindMat([]);
 
-onMounted(() => {
-  fetchMat("");
-});
+  onMounted(() => {
+    fetchMat("");
+  });
 
-const mat = computed(() => {
-  return state.data.length > 0 ? state.data[0].MATNR : "";
-});
+  const mat = computed(() => {
+    return state.data.length > 0 ? state.data[0].MATNR : "";
+  });
 </script>
 
 <style></style>
